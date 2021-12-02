@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
             saveButton.setOnClickListener {
                 if (emailValidator.isValid) {
+                    Repo.addUser(emailInput.text.toString())
                     Toast.makeText(this@MainActivity, getString(R.string.valid_email), Toast.LENGTH_SHORT).show()
                 } else {
                     val errorEmail = getString(R.string.invalid_email)
